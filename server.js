@@ -48,4 +48,10 @@ app.get('/api/books', function(req, res) {
    })
 });
 
+app.delete('/api/books', function(req, res) {
+    Book.remove({}, function(err, books) {
+        return res.json(books);
+    })
+});
+
 app.listen(3000);
